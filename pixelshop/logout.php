@@ -5,4 +5,5 @@
 
     $_SESSION['usuario'] = [];
     
+    header("Location: login.php");
 ?>

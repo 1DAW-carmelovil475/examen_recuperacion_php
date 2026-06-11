@@ -74,8 +74,9 @@
         </tbody>
 
     </table>
-
-    
+    <br><br>
+    <a href="logout.php">Cerrar Sesión</a>
+    <br>
 
 
 </body>

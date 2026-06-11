@@ -5,15 +5,13 @@
     $usuario = "admin";
     $password = "admin";
 
-    if(isset($_POST['nombre'], $_POST['password'])){
-        if($_POST['nombre'] === $usuario && $_POST['password'] === $password){
+    if(isset($_POST['usuario'], $_POST['password'])){
+        if($_POST['usuario'] === $usuario && $_POST['password'] === $password){
             $_SESSION['usuario'] = $_POST['usuario'];
-            header("Location: index.php");
+            header("Location: indexe.php");
         }else{
             echo "ERROR: El usuario o la contraseña son incorrectos. Inténtelo de nuevo";
         }
-    }else{
-        echo "ERROR: Se debe de indicar un usuario y una contraseña";
     }
 
 ?>
@@ -25,7 +23,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <h1>Bienvenido al Login</h1>
+    <form method="post">
         <input type="text" name="usuario" placeholder="Introduce el usuario">
         <input type="password" name="password" placeholder="Introduce la contraseña">
         <button type="submit">Iniciar Sesión</button>
