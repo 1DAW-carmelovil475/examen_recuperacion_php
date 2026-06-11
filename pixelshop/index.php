@@ -13,7 +13,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Listar productos</h2>
+    
+    <h2>Listar productos - <a href = "nuevo.php">Añadir producto</a></h2>
     <form>
         <table border="1">
             <thead>

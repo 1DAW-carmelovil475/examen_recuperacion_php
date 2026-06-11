@@ -8,7 +8,7 @@
     if(isset($_POST['usuario'], $_POST['password'])){
         if($_POST['usuario'] === $usuario && $_POST['password'] === $password){
             $_SESSION['usuario'] = $_POST['usuario'];
-            header("Location: indexe.php");
+            header("Location: index.php");
         }else{
             echo "ERROR: El usuario o la contraseña son incorrectos. Inténtelo de nuevo";
         }
