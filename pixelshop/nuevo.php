@@ -16,10 +16,13 @@
     <form method="post">
         <label>Título: </label>
         <input type="text" name="titulo" placeholder="Introduce el título">
+        <br>
         <label>Categoria: </label>
         <input type="text"  name="categoria" placeholder="Introduce la categoria">
+        <br>
         <label>Precio: </label>
         <input type="number" name="precio" id="precio">
+        <br>
         <label>Stock: </label>
         <input type="number" name="stock" id="stock">
         <button type="submit">Añadir Usuario</button>

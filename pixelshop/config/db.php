@@ -84,18 +84,27 @@
 
         }else{
 
-            throw new PDOException("Hay que ordenar correctamente");
+            if(isset($_POST['titulo'], $_POST['categoria'], $_POST['precio'], $_POST['stock'])){
+                if($_POST['titulo'] !== "" && $_POST['categoria'] !== "" && $_POST['precio'] >= 0 && $_POST['stock'] >= 0){
+                    
+                    $sql = "INSERT INTO productos ('titulo', 'categoria', 'precio', 'stock', 'activo') VALUES ('?', '?', ?, ?, ?)";
+                    $insertar = $pdo->prepare($sql);
+                    
 
-        }
-
-
-        if(isset($_POST['titulo'], $_POST['categoria'], $_POST['precio'], $_POST['stock'])){
-            if($_POST['titulo'] !== "" && $_POST['categoria'] !== "" && $_POST['precio'] >= 0 && $_POST['stock'] >= 0){
-                
-                $sql = "INSERT INTO productos ('titulo', "
-
+                    $insertar->execute( [ $_POST['titulo'], $_POST['categoria'], $_POST['precio'], $_POST['stock'], 1]);
+                    
+    
+                    header("Location: index.php");
+    
+                }else{
+                    throw new PDOException("Se debe de añadir el producto con credenciales correctas");
+                }
             }
+
         }
+
+
+        
 
         
     }catch (PDOException $e){

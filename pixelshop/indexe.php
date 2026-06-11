@@ -1,6 +1,7 @@
 <?php
 
     include __DIR__ . '/../pixelshop/config/db.php';
+    include __DIR__ . '/../pixelshop/login.php';
 
 ?>
 
@@ -49,28 +50,33 @@
         </select>
         <button type="submit">Ordenar</button>
     </form>
+    
     <table border="1">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>Título</td>
-                    <td>Categoría</td>
-                    <td>Precio</td>
-                    <td>Stock</td>
-                </tr>
-            </thead>    
-            <tbody>
-                <?php foreach($stmt as $producto):?>
-                <tr>
-                    <td><?php echo $producto['id']; ?></td>
-                    <td><?php echo $producto['titulo'] ?></td>
-                    <td><?php echo $producto['categoria']?></td>
-                    <td><?php echo $producto['precio']?></td>
-                    <td><?php echo $producto['stock']?></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Título</td>
+                <td>Categoría</td>
+                <td>Precio</td>
+                <td>Stock</td>
+            </tr>
+        </thead>    
+        <tbody>
+            <?php foreach($stmt as $producto):?>
+            <tr>
+                <td><?php echo $producto['id']; ?></td>
+                <td><?php echo $producto['titulo'] ?></td>
+                <td><?php echo $producto['categoria']?></td>
+                <td><?php echo $producto['precio']?></td>
+                <td><?php echo $producto['stock']?></td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
 
-        </table>
+    </table>
+
+    
+
+
 </body>
 </html>
